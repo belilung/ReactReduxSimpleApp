@@ -4,7 +4,7 @@ export default function (state = [], action){
 
   switch (action.type) {
     case FETCH_COUNTRIES:
-      return [action.payload.data, ...state];
+      return [action.payload.data];
       break;
     default:
   }
