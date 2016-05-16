@@ -1,0 +1,11 @@
+.cities-list-item {
+  cursor: pointer;
+}
+
+.cities-list-item:hover {
+  background: #eee;
+}
+
+h3 {
+  text-align: center;
+}
