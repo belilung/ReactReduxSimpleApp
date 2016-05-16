@@ -14,7 +14,7 @@ class CountriesList extends Component{
     this.props.fetchCountries();
   }
 
-  //"Метод", возвращающий либо ожидание, либо
+  //Метод вызывающийся в render. Возвращает разметку JSX 
   renderList() {
     if(this.props.countries.length <= 0) {
       return <div> Wait, please... (If you wait a long time, just refresh page)</div>;
