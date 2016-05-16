@@ -15,7 +15,7 @@ class CountriesList extends Component{
   }
 
   renderList() {
-    console.log(this.props.countries.length);
+    console.log(this.props.countries);
     if(
       typeof this.props.countries == "undefined"
       || this.props.countries == null
@@ -40,11 +40,12 @@ class CountriesList extends Component{
 
   render(){
     return (
+      <div className = "list-group col-sm-4">
       <h3> List of countries </h3>
-
-      <ul className = "list-group col-sm-4">
+      <ul>
           {this.renderList()}
       </ul>
+      </div>
     );
   }
 

@@ -4,15 +4,20 @@ import { connect } from 'react-redux';
 class CountryDetail extends Component{
   render(){
     if(!this.props.country){
-      return <div>Select a country to get started.</div>;
+      return (
+        <div className = "col-sm-8">
+          <h3>Select a country to get started. </h3>
+        </div>
+      );
     }
 
     return (
-      <div>
-        <h3> Details for: </h3>
+      <div className = "col-sm-8">
+        <h3> Details: </h3>
         <div> Code: {this.props.country.code} </div>
         <div> Name: {this.props.country.name} </div>
         <div> Population: {this.props.country.population} </div>
+        <br/>
         <div> Description: {this.props.country.description} </div>
       </div>
     )
