@@ -10,28 +10,25 @@ class CountriesList extends Component{
     super(props);
 
     this.state = { term: ""};
-    //We need to go and fetch countries data
+    //Вызываем конструктор -> берем данные
     this.props.fetchCountries();
   }
 
+  //"Метод", возвращающий либо ожидание, либо
   renderList() {
-    console.log(this.props.countries);
-    if(
-      typeof this.props.countries == "undefined"
-      || this.props.countries == null
-      || this.props.countries.length == null
-      || this.props.countries.length <= 0
-    ){
-      return <div> Loading... </div>;
+    if(this.props.countries.length <= 0) {
+      return <div> Wait, please... </div>;
     }
 
+    //Если все загружено, замещает каждый элемент массива новым, списковым(li) элементом
     return this.props.countries[0].items.map ((country, index) => {
       return (
         <li
-         key={country.code}
-         onClick = {() => this.props.selectCountry(country)}
-         className="list-group-item cities-list-item">
-         {country.name}
+           key={country.code}
+           onClick = {() => this.props.selectCountry(country.code)}
+           className="list-group-item cities-list-item">
+           {country.code},
+           {country.name}
          </li>
       );
     });
