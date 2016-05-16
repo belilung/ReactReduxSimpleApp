@@ -17,7 +17,7 @@ class CountriesList extends Component{
   //"Метод", возвращающий либо ожидание, либо
   renderList() {
     if(this.props.countries.length <= 0) {
-      return <div> Wait, please... </div>;
+      return <div> Wait, please... (If you wait a long time, just refresh page)</div>;
     }
 
     //Если все загружено, замещает каждый элемент массива новым, списковым(li) элементом
